@@ -23,7 +23,7 @@ type sortingDescInterface interface {
 
 // Sorting ascending mode
 type Sorting struct {
-	Position int `sql:"DEFAULT:NULL"`
+	Position int `sql:"DEFAULT:NULL" json:"position"`
 }
 
 // GetPosition get current position
