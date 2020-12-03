@@ -91,7 +91,7 @@ func move(db *gorm.DB, value sortingInterface, pos int) (err error) {
 		}
 		// Use ID as the ONLY condition, so that we can update all version of one record's position.
 		modelObj := reflect.Indirect(reflect.ValueOf(value))
-		err = tx.Table(scope.TableName()).Where("id = ?", modelObj.FieldByName("ID").Interface().(uint)).UpdateColumn("position", gorm.Expr("position + ?", rowsAffected)).Error
+		err = tx.Table(scope.TableName()).Where("id = ?", modelObj.FieldByName("ID").Interface().(int64)).UpdateColumn("position", gorm.Expr("position + ?", rowsAffected)).Error
 	}
 
 	// Create Publish Event
