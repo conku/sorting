@@ -5,11 +5,11 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/conku/gorm"
 	"github.com/conku/publish"
 	"github.com/conku/publish2"
 	"github.com/conku/qor/test/utils"
 	"github.com/conku/sorting"
-	"github.com/jinzhu/gorm"
 )
 
 type User struct {

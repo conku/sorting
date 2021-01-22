@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/conku/gorm"
 	"github.com/conku/l10n"
 	"github.com/conku/sorting"
-	"github.com/jinzhu/gorm"
 )
 
 type Brand struct {

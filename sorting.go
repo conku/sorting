@@ -6,8 +6,8 @@ import (
 	"reflect"
 
 	"github.com/conku/admin"
+	"github.com/conku/gorm"
 	"github.com/conku/publish"
-	"github.com/jinzhu/gorm"
 )
 
 type sortingInterface interface {

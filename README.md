@@ -1,17 +1,17 @@
 # Sorting
 
-Sorting adds reordering abilities to [GORM](https://github.com/jinzhu/gorm) models and sorts collections.
+Sorting adds reordering abilities to [GORM](https://github.com/conku/gorm) models and sorts collections.
 
 [![GoDoc](https://godoc.org/github.com/conku/sorting?status.svg)](https://godoc.org/github.com/conku/sorting)
 ![Build status](https://prow.theplant.dev/badge.svg?jobs=post-qor-sorting-go-test)
 
 ### Register GORM Callbacks
 
-Sorting utilises [GORM](https://github.com/jinzhu/gorm) callbacks to log data, so you will need to register callbacks first:
+Sorting utilises [GORM](https://github.com/conku/gorm) callbacks to log data, so you will need to register callbacks first:
 
 ```go
 import (
-  "github.com/jinzhu/gorm"
+  "github.com/conku/gorm"
   "github.com/conku/sorting"
 )
 
@@ -96,7 +96,7 @@ products // => []Product{
 
 ### Sorting GORM-backend Models
 
-After enabling sorting modes for [GORM](https://github.com/jinzhu/gorm) models, [QOR Admin](https://github.com/conku/admin) will automatically enable the sorting feature for the resource.
+After enabling sorting modes for [GORM](https://github.com/conku/gorm) models, [QOR Admin](https://github.com/conku/admin) will automatically enable the sorting feature for the resource.
 
 [Sorting Demo with QOR](http://demo.getqor.com/admin/colors?sorting=true)
 
@@ -140,6 +140,7 @@ Widgets.RegisterWidget(&widget.Widget{
 ```
 
 ### About record with composite primary key.
+
 It do support sorting records with composite primary key. However there is a exception, the `version_name` is a "reserved" primary key for the qor/publish2 support. So DO NOT use `version_name` as a part of the composite primary key unless you are using qor/publish2.
 
 ## License

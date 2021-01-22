@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/conku/gorm"
 	"github.com/conku/sorting"
-	"github.com/jinzhu/gorm"
 )
 
 type ColorVariation struct {
