@@ -34,7 +34,7 @@ func reorderPositions(scope *gorm.Scope) {
 
 			// with soft delete
 			if scope.HasColumn("DeletedAt") {
-				additionalSQL = append(additionalSQL, "deleted_at IS NULL")
+				additionalSQL = append(additionalSQL, "deleted_at = 0")
 			}
 
 			var sql string
