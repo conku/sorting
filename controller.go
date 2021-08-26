@@ -3,7 +3,6 @@ package sorting
 import (
 	"fmt"
 	"html/template"
-	"net/http"
 	"path"
 	"strconv"
 
@@ -46,16 +45,16 @@ func (s *Sorting) ConfigureQorResourceBeforeInitialize(res resource.Resourcer) {
 	if res, ok := res.(*admin.Resource); ok {
 		res.UseTheme("sorting")
 
-		if res.Permission == nil {
-			res.Permission = roles.NewPermission()
-		}
+		// if res.Permission == nil {
+		// 	res.Permission = roles.NewPermission()
+		// }
 
-		role := res.Permission.Role
-		if _, ok := role.Get("sorting_mode"); !ok {
-			role.Register("sorting_mode", func(req *http.Request, currentUser interface{}) bool {
-				return req.URL.Query().Get("sorting") != ""
-			})
-		}
+		// role := res.Permission.Role
+		// if _, ok := role.Get("sorting_mode"); !ok {
+		// 	role.Register("sorting_mode", func(req *http.Request, currentUser interface{}) bool {
+		// 		return req.URL.Query().Get("sorting") != ""
+		// 	})
+		// }
 
 		res.Meta(&admin.Meta{
 			Name: "Position",
